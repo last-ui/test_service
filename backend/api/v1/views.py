@@ -1,4 +1,5 @@
 from api.v1.mixins import BaseListCreateDeleteViewSet
+from api.v1.serializers import PictureSerializer
 from picture.models import Picture
 
 

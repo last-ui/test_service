@@ -6,8 +6,8 @@ class Picture(models.Model):
 
     description = models.TextField(
         "Описание",
-        blank=True,
-        null=True,
+        blank=False,
+        null=False,
     )
     image = models.ImageField(
         "Изображение",

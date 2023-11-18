@@ -13,6 +13,7 @@ djangorestframework = "^3.14.0"
 pillow = "^10.1.0"
 django-cors-headers = "^4.3.1"
 drf-extra-fields = "^3.7.0"
+aiohttp = "^3.9.0"
 
 
 [tool.poetry.group.dev.dependencies]

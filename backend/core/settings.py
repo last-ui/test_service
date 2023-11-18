@@ -42,6 +42,7 @@ DEFAULT_APPS = [
 LOCAL_APPS = [
     "api",
     "picture",
+    "question",
 ]
 
 EXTERNAL_APPS = [

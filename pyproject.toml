@@ -10,6 +10,9 @@ python = "^3.11"
 django = "^4.2.7"
 python-dotenv = "^1.0.0"
 djangorestframework = "^3.14.0"
+pillow = "^10.1.0"
+django-cors-headers = "^4.3.1"
+drf-extra-fields = "^3.7.0"
 
 
 [tool.poetry.group.dev.dependencies]

@@ -7,6 +7,7 @@ PUBLIC_API_URL: str = "https://jservice.io/api/"
 
 
 async def get_questions_from_url(session, url, db_questions):
+    """Функция обработки входных данных с внешнего API."""
     while True:
         try:
             async with session.get(url) as response:
@@ -30,6 +31,7 @@ async def get_questions_from_url(session, url, db_questions):
 
 
 async def get_questions_from_api(count, db_questions):
+    """Функция получения вопросов с сервиса jservice.io."""
     async with aiohttp.ClientSession() as session:
         task = []
         for number in range(1, count + 1):

@@ -2,9 +2,8 @@ from django.db import models
 
 
 class Category(models.Model):
-
     title = models.CharField(
-        "Заголовок категории",
+        "Заголовок категории", max_length=256, unique=True
     )
 
 

@@ -3,3 +3,4 @@ max-line-length = 79
 per-file-ignores =
     backend/core/settings.py: E501
     **/migrations/*.py: E501
+    backend/test/test.py: E402

@@ -1,62 +1,53 @@
 
-<h1 align="center"> Асинронный Web-сервис получения вопросов викторины </h1>
+<h1 align="center"> Testing Task </h1>
 
 ___
 ### Используемый стек<a name="stack"></a>
 
 [![Python][Python-badge]][Python-url]
-[![FastAPI][Fastapi-badge]][Fastapi-url]
-[![Docker][Docker-badge]][Docker-url]
-[![Postgres][Postgres-badge]][Postgres-url]
+[![Django][Django-badge]][Django-url]
+[![DRF][DRF-badge]][DRF-url]
+[![Vue.js][Vue-badge]][Vue-url]
 
 ### Системные требования
 - Python 3.11+;
-- Docker (19.03.0+) c docker compose;
+- Node.js (v20.9.0+);
 - [Poetry](https://python-poetry.org/docs/#installing-with-the-official-installer).
+
+### Архитектура проекта<a name="architecture"></a>
+
+| Директория     | Описание              |
+|----------------|-----------------------|
+| `frontend`     | Фронтенд Vue.js       |
+| `backend`      | Код Django приложения |
+| `backend/test` | Код класса Test       |
 
 <h2>Подготовка проекта к запуску</h2>
 
-Заполнить .env-файл, вариант заполнения указан example.env.
+1. Заполнить .env-файл, вариант заполнения указан example.env.
 
+2. Создать виртуальное окружение проекта с помощью команды:
+```SHELL
+poetry install
+```
+либо установить зависимости из файла requirements.txt:
+
+```SHELL
+python -m venv venv
+source venv/Scripts/activate
+pip install -r requirements.txt
+```
 
 <h2>Запуск проекта</h2>
 
-**1. Из корневой папки запустить docker-compose командой:**
+1. Из корневой папки запустить командой:
+
 ```shell
-docker-compose up
+npm run --prefix frontend dev & python backend/manage.py runserver
 ```
+2. Проект будет доступен по адресу http://localhost:5173/
+3. Тестовый класс Test /backend/test/test.py
 
-или для пересборки
-```shell
-docker-compose up -d --build
-```
-Миграции alembic будут применены автоматически.
-
-
-<h2>Техническая документация</h2>
-
-Доступ к Swagger:
-
-http://127.0.0.1/docs/
-
-
-<h2>Как работать с API сервиса</h2>
-
-**Пользователь отправляет POST-запрос с параметром questions_num в котором
-указывает количество вопросов на эндпоинт
-/api/questions/, в ответе на запрос ему приходит список сохраненных в базе
-данных вопросов викторины**
-
-*Пример:*
-```
-POST localhost/api/questions/
-Content-Type: application/json
-
-{
-  "questions_num": 1
-}
-```
-В случае отсутвия вопросов в базе данных возвращается пустой список.
 
 <!-- MARKDOWN LINKS & BADGES -->
 
@@ -64,14 +55,14 @@ Content-Type: application/json
 
 [Python-badge]: https://img.shields.io/badge/Python-376f9f?style=for-the-badge&logo=python&logoColor=white
 
-[Fastapi-url]: https://fastapi.tiangolo.com/
+[Django-url]: https://github.com/django/django
 
-[Fastapi-badge]: https://img.shields.io/badge/fastapi-109989?style=for-the-badge&logo=FASTAPI&logoColor=white
+[Django-badge]: https://img.shields.io/badge/Django-0c4b33?style=for-the-badge&logo=django&logoColor=white
 
-[Docker-url]: https://www.docker.com/
+[DRF-url]: https://github.com/encode/django-rest-framework
 
-[Docker-badge]: https://img.shields.io/badge/Docker-2CA5E0?style=for-the-badge&logo=docker&logoColor=white
+[DRF-badge]: https://img.shields.io/badge/DRF-a30000?style=for-the-badge
 
-[Postgres-url]: https://www.postgresql.org/
+[Vue-url]: https://vuejs.org/index.html
 
-[Postgres-badge]: https://img.shields.io/badge/postgres-306189?style=for-the-badge&logo=postgresql&logoColor=white
+[Vue-badge]: https://img.shields.io/badge/Vue.js-4FC08D?style=for-the-badge&logo=vue.js&logoColor=white

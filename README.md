@@ -30,12 +30,22 @@ ___
 ```SHELL
 poetry install
 ```
-либо установить зависимости из файла requirements.txt:
+- либо установить зависимости из файла requirements.txt:
 
 ```SHELL
 python -m venv venv
 source venv/Scripts/activate
 pip install -r requirements.txt
+```
+3. Применить миграции:
+```SHELL
+python backend/manage.py migrate
+```
+4. Установить зависимости frontend-а:
+
+```SHELL
+cd frontend
+npm install
 ```
 
 <h2>Запуск проекта</h2>
@@ -46,7 +56,21 @@ pip install -r requirements.txt
 npm run --prefix frontend dev & python backend/manage.py runserver
 ```
 2. Проект будет доступен по адресу http://localhost:5173/
-3. Тестовый класс Test /backend/test/test.py
+
+4. Тестовый класс Test /backend/test/test.py:
+```SHELL
+# Создание объекта
+test_object = Test(question_count=<int>, result_count=<int>)
+
+# Метод получения вопросов с внешнего API и сохранения в БД
+test_object.create_new_questions()
+
+#Метод получения записей в категории
+test.get_category_question_count(category=<str>)
+
+#Метод получения вопросов из БД и сохранения в json файл.
+test.get_db_questions()
+```
 
 
 <!-- MARKDOWN LINKS & BADGES -->
